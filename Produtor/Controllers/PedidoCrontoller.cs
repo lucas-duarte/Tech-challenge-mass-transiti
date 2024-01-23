@@ -19,8 +19,7 @@ namespace Produtor.Controllers
         public async Task<IActionResult> Post()
         {
             var endpoint = await _bus.GetSendEndpoint(new Uri("queue:fila"));
-            await endpoint.Send(new Pedido(1, new Usuario(1, "Lucas Duarte Perera", "lucasduarte@email.com")));
-            //await _bus.Publish(new Pedido(1, new Usuario(1, "Carlos", "carlos@email.com")));
+            await endpoint.Send(new Pedido(1, new Usuario(1, "Lucas Duarte Pereira", "lucasduarte@email.com")));
             return Ok();
         }
     }
